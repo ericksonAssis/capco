@@ -22,15 +22,10 @@ public class User {
         @Size(min = 1, max = 100)
         private String username;
 
-        @NotBlank
-        @Size(max = 50)
-        @Column(name = "first_name")
-        private String firstName;
-
-        @Size(max = 50)
-        @Column(name = "last_name")
-        private String lastName;
-
         @Column(name = "profile")
+        @Enumerated
         private ProfileEnum profile;
+
+        @Column(name = "password")
+        private String password;
 }

@@ -3,6 +3,7 @@ package com.capco.challenge.web;
 import com.capco.challenge.entity.HumanResponse;
 import com.capco.challenge.entity.Person;
 import com.capco.challenge.entity.PersonResponse;
+import com.capco.challenge.entity.User;
 import com.capco.challenge.service.StarWarsService;
 import io.swagger.annotations.ApiModelProperty;
 import org.slf4j.Logger;
@@ -62,5 +63,12 @@ public class StarWarsController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    @ApiModelProperty
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public ResponseEntity<User> getAllUsers(){
+        logger.info("Returning all the User´s");
 
+        List<User> users = starWarsService.getAllUsers();
+        return new ResponseEntity(users, HttpStatus.OK);
+    }
 }

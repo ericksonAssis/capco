@@ -2,7 +2,7 @@ package com.capco.challenge.enumeration;
 
 public enum ProfileEnum {
 
-    ADMIN(1),USER(2);
+    ADMIN(0),USER(1);
 
     public int profileCode;
 
